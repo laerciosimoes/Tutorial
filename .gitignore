@@ -1,0 +1,13 @@
+# C Files
+CMakeFiles/
+CMakeCache.txt
+
+
+# C# Files
+bin/
+obj/
+
+
+# Java Files
+build/
+.gradle/
