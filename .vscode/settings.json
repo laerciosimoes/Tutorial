@@ -1,4 +1,4 @@
 {
-    "go.gopath": null,
+    "go.gopath": "$HOME/go",
     "java.configuration.updateBuildConfiguration": "automatic"
 }
