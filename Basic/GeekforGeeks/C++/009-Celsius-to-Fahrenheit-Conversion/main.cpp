@@ -8,16 +8,11 @@ using namespace std;
 ifstream fin("input.txt");
 #define cin fin
 
-string to_base(int number, int base ) {
-    string bases = "0123456789ABCDEF";
-    string result = "";
-    while(number > 0) {
-        result = bases[number%base] + result;
-        number /= base;
-    }
-    return result;
-}
 
+int celsius_to_Fahreneit(int number) {
+    double result = number * 1.8 + 32;
+    return (int)result;
+}
 
 int main()
 {
@@ -27,10 +22,8 @@ int main()
     for(int i = 0; i < numLines; i++) 
 	{
 	    getline(cin,line);
-	    int myBase = atoi( line.c_str());
-	    getline(cin,line);
 	    int myNum = atoi( line.c_str());
-		cout << to_base(myNum, myBase) << endl;
+		cout << celsius_to_Fahreneit(myNum) << endl;
 	}
 	
 	return 1;

@@ -8,13 +8,15 @@ using namespace std;
 ifstream fin("input.txt");
 #define cin fin
 
-string to_base(int number, int base ) {
+int base_to(string number, int base ) {
     string bases = "0123456789ABCDEF";
-    string result = "";
-    while(number > 0) {
-        result = bases[number%base] + result;
-        number /= base;
-    }
+    int result = 0;
+    int power = 1;
+    for (std::string::reverse_iterator rit=number.rbegin(); rit!=number.rend(); ++rit) {
+        int found = bases.find(*rit);
+        result += found * power;
+        power = power * base;
+    }   
     return result;
 }
 
@@ -29,8 +31,8 @@ int main()
 	    getline(cin,line);
 	    int myBase = atoi( line.c_str());
 	    getline(cin,line);
-	    int myNum = atoi( line.c_str());
-		cout << to_base(myNum, myBase) << endl;
+	    string myNum = line;
+		cout << base_to(myNum, myBase) << endl;
 	}
 	
 	return 1;
